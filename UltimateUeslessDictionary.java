@@ -28,5 +28,11 @@ public class ultimateUeslessDictionary {
 
     public static void readFileIntoDict(File file,HashMap dict) throws FileNotFoundException {
 //here will be completed by my teammate
+        Scanner reader = new Scanner(file);
+        for (int i = 0; reader.hasNextLine(); i++) {
+            dict.put(reader.nextLine(),1);
+        }
+        reader.close();
+        
     }
 }
