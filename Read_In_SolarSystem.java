@@ -58,9 +58,24 @@ public class Solar_System {
 
     public static void savePlanet(ArrayList<String> line, ArrayList<planet> planets) {
 // here for my mate
+        for (int i = 1; i < line.size(); i++) {
+            String[] date = line.get(i).trim().split("\\s+", 0);
+
+            planet planet = new planet(date[0], date[1], Double.parseDouble(date[2]), Double.parseDouble(date[3]),
+                    Double.parseDouble(date[4]), Double.parseDouble(date[5]));
+            if (date[0].equals("Sun") || date[0].equals("Earth") || date[0].equals("Moon") || date[0].equals("Venus")) {
+                planets.add(planet);
+            }
+        }
+
     }
 
     public static void readFile(File file) throws FileNotFoundException, IOException {
 // here my for mate
+        Scanner reader = new Scanner(file);
+        for (int i = 0; reader.hasNextLine(); i++) {
+            line.add(reader.nextLine());;
+        }
+        reader.close();
 
 }
