@@ -44,13 +44,10 @@ public class ParseText {
         System.out.println("There are " + words.size() + " words in book.");
 
         for (int i = 1; i < words.size() - 1; i++) {
-//            String before = words.get(i - 1);
             String w = words.get(i);
-//            String after = words.get(i + 1);
             String before = words.get(i - 1) + " " + words.get(i);
             String after = words.get(i) + " " + words.get(i + 1);
-//if(before.contains(".")||after.contains(".")) System.out.println(before);
-//if(after.contains(".")) System.out.println(after);
+
             if (keywords.contains(w)) {
 
                 if (!before.contains("###")) {
@@ -61,8 +58,6 @@ public class ParseText {
                 }
             }
         }
-
-//        wordCount.put("", 0);//cheating
         Iterator iterator = wordCount.keySet().iterator();
         System.out.println("Here are the word combinations which count for more than 50 times:");
         int howMany = 0;
@@ -76,10 +71,8 @@ public class ParseText {
                 total += wordCount.get(key);
             }
         }
-//        System.out.println("her and" + "  ==>  " + wordCount.get("her and"));
         System.out.println("There are " + howMany + " in total.");
         System.out.println("They counts total " + total + " .");
-//        System.out.println(wordCount);
     }
 
 }
