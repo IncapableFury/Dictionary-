@@ -65,7 +65,7 @@ public class ParseText {
         while (iterator.hasNext()) {
             String key = (String) iterator.next();
 
-            if (wordCount.get(key) > 50) {
+            if (wordCount.get(key) > 49) {
                 System.out.println(key + "  ==>  " + wordCount.get(key));
                 howMany += 1;
                 total += wordCount.get(key);
