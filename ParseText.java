@@ -50,7 +50,7 @@ public class ParseText {
 
             if (keywords.contains(w)) {
 
-                if (!before.contains("###")) {
+                if (!before.contains("###")&&!keywords.contains(words.get(i - 1))) {
                     wordCount.put(before, wordCount.getOrDefault(before, 0) + 1);
                 }
                 if (!before.contains("###")) {
